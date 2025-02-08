@@ -1,0 +1,37 @@
+
+
+class Cycle{
+  int no_of_wheel=2;
+  //encapsulation
+  private int no_of_sheat=1;
+  
+  public int getNo_of_sheat(){
+      return no_of_sheat;
+  }
+  public void setNo_of_sheat(int num){
+      this.no_of_sheat=num;
+  }
+}
+//abstraction
+abstract class Cycle_features{
+ //polymorphism
+  abstract public void speed_limit();
+   
+}
+//inheritance
+class Electric_cycle extends Cycle_features{
+    public void speed_limit(){
+        System.out.println("sped limit of electric cycle is 30 km/hr");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Cycle obj1=new Cycle();
+        
+        System.out.println("the no. of wheel of electric cycle is "+obj1.no_of_wheel);
+       obj1.setNo_of_sheat(2);
+        System.out.println("total no.of sheat of electric cycle is "+obj1.getNo_of_sheat());
+        Electric_cycle obj2=new Electric_cycle();
+        obj2.speed_limit();
+    }
+}
